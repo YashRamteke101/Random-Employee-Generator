@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  button[type="submit"] {
+    padding: 5px;
+    width: 200px;
+  }
+
+  button[type="submit"] {
+    margin-top: 10px;
+  }
+
+  #employeeDisplay {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+
+  p {
+    margin: 5px 0;
+  }
