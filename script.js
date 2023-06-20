@@ -1,25 +1,36 @@
-// Function to generate random employee IDs
+// Employee class
+class Employee {
+  constructor(id, firstName, lastName, email, companyName) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.companyName = companyName;
+  }
+}
+
+//  generate random employee IDs
 function generateEmployeeId() {
   return Math.floor(Math.random() * 1000) + 1;
 }
 
-// Function to generate random employee name
+//  generate random employee name
 function generateEmployeeName() {
   return faker.name.firstName();
 }
 
-// Function to generate random last name
+//  generate random last name
 function generateEmployeeLastName() {
   return faker.name.lastName();
 }
 
-// Function to generate email address
+//  generate email address
 function generateEmployeeEmail(firstName, lastName, companyName) {
   const email = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@${companyName.toLowerCase()}.com`;
   return email;
 }
 
-// Function to handle form submission
+//  handle form submission
 function handleSubmit(event) {
   event.preventDefault();
 
@@ -38,13 +49,7 @@ function handleSubmit(event) {
       const email = generateEmployeeEmail(firstName, lastName, companyName);
       const id = generateEmployeeId();
 
-      const employee = {
-        id: id,
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        companyName: companyName
-      };
+      const employee = new Employee(id, firstName, lastName, email, companyName);
 
       employees.push(employee);
     }
@@ -53,7 +58,7 @@ function handleSubmit(event) {
   }
 }
 
-// Function to display employee details
+//  display employee details
 function displayEmployees(employees) {
   const displayDiv = document.getElementById('employeeDisplay');
   displayDiv.innerHTML = '';
